@@ -40,4 +40,20 @@ class News_model extends CI_Model {
 			$this->db->where('id', $id);
 			return $this->db->delete('news');
 		}
+		
+		public function update_news()
+		{
+			$this->load->helper('url');
+
+			$slug = url_title($this->input->post('title'), 'dash', TRUE);
+
+			$data = array(
+				'title' => $this->input->post('title'),
+				'slug' => $slug,
+				'text' => $this->input->post('text')
+			);
+			$id = $this->input->post('id');
+			$this->db->where('id', $id);
+			return $this->db->update('news', $data);
+		}
 }
