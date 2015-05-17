@@ -63,4 +63,9 @@ class Home extends xcontroller {
 		}
 	}
 	
+	public function delete(){
+		$this->news_model->delete_news();
+		$this->load->view('news/success');		
+	}
+	
 }

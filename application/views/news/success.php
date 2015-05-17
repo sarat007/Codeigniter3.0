@@ -1,1 +1,1 @@
-<?php echo "Create Successful"; ?>
+<?php echo "Successful"; ?>
